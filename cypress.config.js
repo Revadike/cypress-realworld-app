@@ -1,12 +1,22 @@
-import path from "path";
-import _ from "lodash";
-import axios from "axios";
-import dotenv from "dotenv";
-import Promise from "bluebird";
-import { percyHealthCheck } from "@percy/cypress/task";
-import codeCoverageTask from "@cypress/code-coverage/task";
-import { defineConfig } from "cypress";
-import "@cypress/instrument-cra";
+// import path from "path";
+// import _ from "lodash";
+// import axios from "axios";
+// import dotenv from "dotenv";
+// import Promise from "bluebird";
+// import { percyHealthCheck } from "@percy/cypress/task";
+// import codeCoverageTask from "@cypress/code-coverage/task";
+// import { defineConfig } from "cypress";
+// import "@cypress/instrument-cra";
+
+const path = require("path");
+const _ = require("lodash");
+const axios = require("axios");
+const dotenv = require("dotenv");
+const Promise = require("bluebird");
+const { percyHealthCheck } = require("@percy/cypress/task");
+const codeCoverageTask = require("@cypress/code-coverage/task");
+const { defineConfig } = require("cypress");
+require("@cypress/instrument-cra");
 
 dotenv.config({ path: ".env.local" });
 dotenv.config();
@@ -66,7 +76,7 @@ module.exports = defineConfig({
     },
   },
   e2e: {
-    baseUrl: "http://localhost:3000",
+    baseUrl: "https://m-heezen-staging-21313.web.app/",
     specPattern: "cypress/tests/**/*.spec.{js,jsx,ts,tsx}",
     supportFile: "cypress/support/e2e.ts",
     viewportHeight: 1000,
